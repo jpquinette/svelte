@@ -5,32 +5,34 @@
   import ValueTest from './lib/ValueTest.svelte';
 
   let todos = [
-    { text: 'Lait', done: true },
+    { text: 'Lait', done: false },
 
     { text: 'Viande', done: false },
+    { text: 'Il était un petit navire', done: false },
+    { text: 'Jus', done: false },
+    { text: 'Lait', done: false },
+    { text: 'Sucre', done: false },
   ];
 
   let todofield = '';
 </script>
 
-<div class="p-4 m-4 bg-gray-200 rounded-lg">
+<div class="p-4 m-4 rounded-lg">
   
-  <!-- GRID avec max 4 colonnes -->
-  <div class="grid grid-cols-4 gap-4">
+
+  <div class="flex flex-wrap justify-center gap-4">
     {#each todos as todo, i}
-      <div class="bg-white p-4 rounded-lg shadow-md flex justify-between items-center cursor-pointer"
+      <button class="item-btn p-4 rounded-lg flex justify-between items-center cursor-pointer 
+               bg-gray-200 text-gray-900 dark:bg-gray-800 dark:text-white"
         on:click|preventDefault={() => {
-            todos = todos.filter((t) => t !== todo);
-          }}
+          todos = todos.filter((t) => t !== todo);
+        }}
       >
-        <p class="text-center font-semibold">{todo.text}</p>
-        <button
-          
-          class="m-0 p-0"
-        >
+        <p class="text-left font-semibold">{todo.text}</p>
+        <p class="text-right m-1">
           X
-        </button>
-      </div>
+        </p>
+      </button>
     {/each}
   </div>
 
@@ -42,7 +44,7 @@
         todofield = '';
       }
     }}
-    class="mt-4 flex justify-center gap-2"
+    class="m-4"
   >
     <input
       type="text"
