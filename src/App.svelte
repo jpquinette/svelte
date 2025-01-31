@@ -1,23 +1,23 @@
-<ValueTest value={'Jp'}/>
+<ValueTest/>
 
 <script>
 
   import ValueTest from './lib/ValueTest.svelte';
 
   let todos = [
-    { text: 'Lait', done: false },
+     /*{ text: 'Lait', done: false },
 
-    { text: 'Viande', done: false },
+   { text: 'Viande', done: false },
     { text: 'Il était un petit navire', done: false },
     { text: 'Jus', done: false },
     { text: 'Lait', done: false },
-    { text: 'Sucre', done: false },
+    { text: 'Sucre', done: false },*/
   ];
 
   let todofield = '';
 </script>
 
-<div class="p-4 m-4 rounded-lg">
+<div class="m-5">
   
 
   <div class="flex flex-wrap justify-center gap-4">
@@ -50,11 +50,11 @@
       type="text"
       name="todo"
       id="todo"
-      class="rounded-md p-3 text-sm border border-gray-400"
+      class="rounded-md p-3 m-2 text-sm border border-gray-400"
       bind:value={todofield}
       placeholder="Ajouter un item"
     />
-    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">+</button>
+    <button class="bg-blue-500 text-white px-4 py-2 m-3 rounded-md hover:bg-blue-600">+</button>
   </form>
 
 </div>
